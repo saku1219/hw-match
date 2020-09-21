@@ -27,17 +27,6 @@
   align-items: center;
 }
 
-.header-button{
-  padding: 20px 40px;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.header-button:hover{
-  border: 5px solid #ff3333;
-  color: #ff3333;
-}
-
 .post-button{
   padding: 20px 40px;
   font-size: 20px;
@@ -58,12 +47,16 @@
   align-items: center;
 }
 
-.log-in{
+
+.header-button{
+  padding: 20px 40px;
+  font-size: 20px;
   border: 5px solid darkred;
   color: darkred;
+  text-decoration: none;
 }
 
-.sign-in{
-  border: 5px solid darkred;
-  color: darkred;
+.header-button:hover{
+  border: 5px solid #ff3333;
+  color: #ff3333;
 }

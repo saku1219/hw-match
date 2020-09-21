@@ -3,7 +3,7 @@ app/assets/stylesheets/jobs/form.css %>
 
 <%= render "shared/header" %>
 
-<%= form_with model: @user, url: "/users", class: "wrapper-form-body", local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, class: "wrapper-form-body", local: true do |f| %>
 
 
   <div class="wrapper-form">
@@ -13,7 +13,7 @@ app/assets/stylesheets/jobs/form.css %>
 
       <div class="text-field">
         <label class="text-field-label">ニックネーム</label>
-        <%= f.text_area :nickname, class: "text-field-input", placeholder: "必須", autofocus: true %>
+        <%= f.text_field :nickname, class: "text-field-input", placeholder: "必須", autofocus: true %>
       </div>
       <div class="text-field">
         <label class="text-field-label">メールアドレス</label>
@@ -31,7 +31,7 @@ app/assets/stylesheets/jobs/form.css %>
         <label class="text-field-label">電話番号
         <span class="notice">※ハイフンなしで記載してください</span>
         </label>
-        <%= f.text_area :tel, class: "text-field-input", placeholder: "必須", maxlength: "11" %>
+        <%= f.text_field :tel, class: "text-field-input", placeholder: "必須", maxlength: "11" %>
       </div>
 
       <%= f.submit "登録する" ,class:"text-field-btn" %>

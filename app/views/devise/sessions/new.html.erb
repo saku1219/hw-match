@@ -11,8 +11,8 @@ app/assets/stylesheets/jobs/form.css %>
     </div>
 
       <div class="text-field">
-        <label class="text-field-label">ニックネーム</label>
-        <%= f.text_area :nickname, class: "text-field-input", placeholder:"必須", autofocus: true %>
+        <label class="text-field-label">メールアドレス</label>
+        <%= f.email_field :email, class: "text-field-input", placeholder:"必須", autofocus: true %>
       </div>
 
       <div class="text-field">
