@@ -6,36 +6,40 @@ app/assets/stylesheets/jobs/form.css %>
 <%= form_with model: @user, url: user_registration_path, class: "wrapper-form-body", local: true do |f| %>
 
 
-  <div class="wrapper-form">
-    <div class="tittle-bar">
-      <h2 class="form-tittle">新規登録</h2>
+<div class="wrapper-form">
+  <div class="tittle-bar">
+    <h2 class="form-tittle">新規登録</h2>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="text-field">
+      <label class="text-field-label">ニックネーム</label>
+      <%= f.text_field :nickname, class: "text-field-input", placeholder: "必須", autofocus: true %>
+    </div>
+    <div class="text-field">
+      <label class="text-field-label">メールアドレス</label>
+      <%= f.email_field :email, class: "text-field-input", placeholder: "必須" %>
+    </div>
+    <div class="text-field">
+      <label class="text-field-label">パスワード
+      <span class="notice">※英数字混合で8文字以上</span>
+      </label>
+      <%= f.password_field :password, class: "text-field-input", placeholder: "必須" %>
+    </div>
+    <div class="text-field">
+      <label class="text-field-label">パスワード(確認)</label>
+      <%= f.password_field :password_comfirmation, class: "text-field-input", placeholder: "必須" %>
+    </div>
+    <div class="text-field">
+      <label class="text-field-label">電話番号
+      <span class="notice">※ハイフンなしで記載してください</span>
+      </label>
+      <%= f.text_field :tel, class: "text-field-input", placeholder: "必須", maxlength: "11" %>
     </div>
 
-      <div class="text-field">
-        <label class="text-field-label">ニックネーム</label>
-        <%= f.text_field :nickname, class: "text-field-input", placeholder: "必須", autofocus: true %>
-      </div>
-      <div class="text-field">
-        <label class="text-field-label">メールアドレス</label>
-        <%= f.email_field :email, class: "text-field-input", placeholder: "必須" %>
-      </div>
-      <div class="text-field">
-        <label class="text-field-label">パスワード</label>
-        <%= f.password_field :password, class: "text-field-input", placeholder: "必須" %>
-      </div>
-      <div class="text-field">
-        <label class="text-field-label">パスワード(確認)</label>
-        <%= f.password_field :password_comfirmation, class: "text-field-input", placeholder: "必須" %>
-      </div>
-      <div class="text-field">
-        <label class="text-field-label">電話番号
-        <span class="notice">※ハイフンなしで記載してください</span>
-        </label>
-        <%= f.text_field :tel, class: "text-field-input", placeholder: "必須", maxlength: "11" %>
-      </div>
-
-      <%= f.submit "登録する" ,class:"text-field-btn" %>
-  </div>
+    <%= f.submit "登録する" ,class:"text-field-btn" %>
+</div>
 <% end %>
 
 <%= render "shared/footer" %>
