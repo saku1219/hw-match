@@ -1,0 +1,69 @@
+
+.header{
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.wrapper-tittle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-tittle{
+  padding: 20px;
+  color: #332100;
+  font-size: 100px;
+  font-family: "Nico Moji";
+  text-decoration: none;
+}
+
+.post{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-button{
+  padding: 20px 40px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.header-button:hover{
+  border: 5px solid #ff3333;
+  color: #ff3333;
+}
+
+.post-button{
+  padding: 20px 40px;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #cc0000;
+  color: white;
+  font-size: 30px;
+}
+
+.post-button:hover{
+  background-color: #ff3333;
+}
+
+.user-management{
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.log-in{
+  border: 5px solid darkred;
+  color: darkred;
+}
+
+.sign-in{
+  border: 5px solid darkred;
+  color: darkred;
+}

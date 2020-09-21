@@ -1,0 +1,47 @@
+<%= render "shared/header" %>
+
+<%# post board %>
+<%# job board %>
+<div class="wrapper-jobs-board">
+  <div class="jobs-board">
+    <div class="wrapper-jobs-board-tittle">
+      <p class="job-tittle">手伝って欲しいです！</p>
+    </div>
+    
+<%# post %>
+    <div class="posts-body">
+    <%= link_to "#", class: "posts_link" do %>
+      <div class="post-tittle">部屋の掃除をお願いします。</div>
+      <div class="post-user-name">toro</div>
+      <div class="post-job-place-genre">
+        <div class="post-job-place">場所 : 渋谷</div>
+        <div class="post-job-genre">ジャンル : 部屋の掃除</div>
+      </div>
+      <div class="post-start-end-time">日時: 2020/11/11  開始時間 11:00 終了時間 14:00</div>
+    <% end %>
+    </div>
+
+<%# //post %>
+
+<%# help board %>
+
+  <div class="helpers-board">
+    <div class="wrapper-helpers-board-tittle">
+      <p class="helper-tittle">手伝います！</p>
+    </div>
+
+<%# 投稿がない時、if分岐する %>
+    <div class="posts-body">
+      <p class="post-null">現在投稿がありません。。</p>
+    </div>
+<%# //投稿がない時、if分岐する %>
+
+  </div>
+</div>
+
+<%# //help board %>
+
+<%# //post board %>
+
+
+<%= render "shared/footer" %>
