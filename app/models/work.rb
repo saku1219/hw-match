@@ -9,7 +9,6 @@ class Work < ApplicationRecord
     validates :start_time,  if: :past_date_time
     validates :end_time,    if: :past_start_time
     validates :description
-    validates :user
   end
 
   private
