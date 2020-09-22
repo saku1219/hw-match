@@ -4,6 +4,7 @@ class CreateWorks < ActiveRecord::Migration[6.0]
       t.integer     :type_id,     null: false
       t.string      :name,        null: false
       t.integer     :genre_id,    null: false
+      t.string      :place,       null: false
       t.datetime    :start_time,  null: false
       t.datetime    :end_time,    null: false
       t.text        :description, null: false
