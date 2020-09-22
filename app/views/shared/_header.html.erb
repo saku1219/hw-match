@@ -4,7 +4,7 @@
       <%= link_to "かじマッチ", root_path, class: "site-tittle" %>
     </div>
     <div class="post">
-      <%= link_to "投稿する", "#", class: "post-button" %>
+      <%= link_to "投稿する", new_work_path, class: "post-button" %>
     </div>
     <ul class="user-management">
       <% if user_signed_in? %>
