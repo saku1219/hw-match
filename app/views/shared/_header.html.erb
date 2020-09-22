@@ -1,0 +1,19 @@
+<header>
+  <div class="header">
+    <div class="wrapper-tittle">
+      <%= link_to "かじマッチ", root_path, class: "site-tittle" %>
+    </div>
+    <div class="post">
+      <%= link_to "投稿する", "#", class: "post-button" %>
+    </div>
+    <ul class="user-management">
+      <% if user_signed_in? %>
+        <li><%= link_to "マイページ", "#", method: :delete, class: "my-page header-button" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout header-button" %></li>
+      <% else %>
+        <li><%= link_to "ログイン", new_user_session_path , class: "log-in header-button" %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: "sign-in header-button" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>

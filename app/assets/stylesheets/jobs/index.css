@@ -1,0 +1,92 @@
+
+/* body */
+
+.wrapper-jobs-board{
+  background-color: floralwhite;
+  display: flex;
+  justify-content: center;
+}
+
+.jobs-board,
+.helpers-board{
+  background-color: moccasin;
+  margin: 10px;
+  width: 500px;
+}
+
+.wrapper-jobs-board-tittle,
+.wrapper-helpers-board-tittle{
+  background-color: maroon;
+  color: white;
+  height: 60px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-tittle, .helper-tittle{
+  padding: 10px 30px;
+  font-size: 30px;
+}
+
+/* posts */
+
+.posts_link{
+  text-decoration: none;
+  color: black;
+}
+.posts_link:hover{
+  color: gray;
+}
+
+.posts-body{
+  background-color: snow;
+  margin: 10px;
+}
+.post-tittle{
+  overflow-x: hidden;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 5px;
+}
+
+.post-user-name{
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.post-job-place-genre{
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-job-place{
+  padding: 5px 0; 
+}
+
+.post-job-genre{
+  padding: 5px;
+}
+
+.post-start-end-time{
+  padding: 5px;
+}
+
+.post-null{
+  font-size: 20px;
+  padding: 20px;
+}
+
+/* /posts */
+
+
+/* /body */
+
+
+
+
+
+

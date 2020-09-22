@@ -1,0 +1,33 @@
+<%# cssは下記のものを併用しています。
+app/assets/stylesheets/jobs/form.css %>
+
+<%= render "shared/header" %>
+
+<%= form_with model: @user, url: user_session_path, class: "wrapper-form-body", local: true do |f| %>
+
+<div class="wrapper-form">
+  <div class="tittle-bar">
+    <h2 class="form-tittle">ログイン</h2>
+  </div>
+
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+
+    <div class="text-field">
+      <label class="text-field-label">メールアドレス</label>
+      <%= f.email_field :email, class: "text-field-input", placeholder:"必須", autofocus: true %>
+    </div>
+
+    <div class="text-field">
+      <label class="text-field-label">パスワード</label>
+      <%= f.password_field :password, class: "text-field-input", placeholder:"必須" %>
+    </div>
+
+    <%= f.submit "ログインする" ,class:"text-field-btn" %>
+  
+</div>
+<% end %>
+
+<%= render "shared/footer" %>

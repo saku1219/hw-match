@@ -1,0 +1,70 @@
+/* 新規登録、ログイン、新規投稿、編集で併用しています */
+
+.wrapper-form-body{
+  background-color: floralwhite;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper-form{
+  background-color: white;
+  width: 600px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tittle-bar{
+  width: 500px;
+  border-bottom: 1px solid lightgray;
+}
+
+.form-tittle{
+  font-size: 30px;
+  font-weight: 800;
+  color: #332100;
+  margin: 20px;
+  text-align: center;
+}
+
+.text-field{
+  margin: 20px;
+  width: 60%;
+}
+
+.text-field-label{
+  color: #332100;
+  font-size: 20px;
+  font-weight: 900px;
+  margin: 5px;
+}
+
+.text-field-input{
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 5px;
+  resize: none;
+}
+
+.text-field-btn{
+  margin: 20px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 180px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.text-field-btn:hover{
+  background-color: #ff9999;
+}
+
+.notice{
+  font-size: 13px;
+  color: gray;
+}

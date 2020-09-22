@@ -1,0 +1,20 @@
+footer{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-tittle{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 40px;
+  color: #332100;
+  font-family: "Nico Moji";
+  text-decoration: none;
+}
+
+.copyright{
+  text-align: center;
+  margin-top: 20px;
+}
