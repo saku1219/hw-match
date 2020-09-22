@@ -1,0 +1,68 @@
+<%= render "shared/second-header" %>
+
+<%= form_with model: @job, url: jobs_path, class: "wrapper-form-body", local: true do |f| %>
+
+<div class="wrapper-form-body">
+  <div class="wrapper-form">
+    <div class="tittle-bar">
+      <h2 class="form-tittle">新規投稿</h2>
+    </div>
+
+      <div class="text-field">
+        <label class="text-field-label">手伝って欲しい！ / 手伝えます！</label>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"text-field-input"}) %>
+      </div>
+      <div class="text-field">
+        <label class="text-field-label">依頼名</label>
+        <%= f.text_field :type, class: "text-field-input" %>
+      </div>
+      <div class="text-field">
+        <label class="text-field-label">場所</label>
+        <%= f.text_field :type, class: "text-field-input" %>
+      </div>
+      <div class="text-field">
+        <label class="text-field-label">ジャンル</label>
+        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"text-field-input"}) %>
+      </div>
+      <div class="text-field">
+        <label class="text-field-label">開始時間</label>
+        <div class="text-field-input">
+          <%= raw sprintf(
+            f.datetime_select(
+              :start_time,
+              use_month_numbers: true,
+              start_year: (Date.today.year),
+              end_year: (Date.today.year + 1),
+              date_separator: '%s',
+              datetime_separator: '%s',
+              time_separator: '%s'),
+              '年', '月', '日', '時') + '分' %>
+        </div>
+      </div>
+      <div class="text-field">
+        <label class="text-field-label">終了時間</label>
+        <div class="text-field-input">
+          <%= raw sprintf(
+            f.datetime_select(
+              :end_time,
+              use_month_numbers: true,
+              start_year: (Date.today.year),
+              end_year: (Date.today.year + 1),
+              date_separator: '%s',
+              datetime_separator: '%s',
+              time_separator: '%s'),
+              '年', '月', '日', '時') + '分' %>
+        </div>
+      </div>
+      <div class="text-field">
+        <label class="text-field-label">詳細説明</label>
+        <%= f.text_area :type, class: "text-area-input" %>
+      </div>
+
+      <%= f.submit "投稿する" ,class:"text-field-btn" %>
+    
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/footer" %>
