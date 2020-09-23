@@ -48,7 +48,7 @@
                 <div class="comment-text"><%= comment.content %></div>
               </div>
               <div class="comment-right">
-                <div class="comment-delete-btn">削除する</div>
+                <div class="comment-delete-btn"><%= link_to "削除する", work_comment_path(@work, comment), method: :delete, class: "comment-delete-content" %></div>
               </div>
             </div>
           </div>

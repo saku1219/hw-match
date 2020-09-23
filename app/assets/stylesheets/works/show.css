@@ -133,7 +133,11 @@
   margin-left: 10px;
   text-align: center;
   border: 2px solid maroon;
+}
+
+.comment-delete-content{
   color: maroon;
+  text-decoration: none;
 }
 
 .comment-form{

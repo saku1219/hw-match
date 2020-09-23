@@ -5,6 +5,12 @@ class CommentsController < ApplicationController
     redirect_to  "/works/#{comment.work.id}"
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to "/works/#{comment.work.id}"
+  end
+
   private
 
   def comment_params
