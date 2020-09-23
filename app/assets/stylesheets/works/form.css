@@ -68,9 +68,48 @@
   height: 50px;
   width: 180px;
   font-size: 20px;
-  background-color: red;
+  background-color: maroon;
   color: white;
   border: none;
+}
+
+.edit-cancel-btn{
+  margin-bottom: 20px;
+  height: 50px;
+  width: 180px;
+  border: 3px solid darkred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-cancel-content{
+  font-size: 20px;
+  color: darkred;
+  text-decoration: none;
+}
+
+.edit-delete-border{
+  border-top: 1px solid gray;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-delete-btn{
+  margin: 20px;
+  height: 50px;
+  width: 180px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-delete-content{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
 }
 
 .text-field-btn:hover{
