@@ -36,39 +36,33 @@
     <div class="wrapper-comments">
       <p class="comment-heading">コメント</p>
 
-      <div class="comments-list">
-        <div class="wrapper-comment">
-          <div class="comment-left">
-            <div class="comment-upper">
-              <p class="comment-user-name">test</p>
-              <p class="comment-create-time">2020/12/11 11:11</p>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <div class="comments-list">
+            <div class="wrapper-comment">
+              <div class="comment-left">
+                <div class="comment-upper">
+                  <p class="comment-user-name"><%= comment.user.nickname %></p>
+                  <p class="comment-create-time"><%= comment.created_at.strftime("%Y-%m-%d  %H:%M") %></p>
+                </div>
+                <div class="comment-text"><%= comment.content %></div>
+              </div>
+              <div class="comment-right">
+                <div class="comment-delete-btn">削除する</div>
+              </div>
             </div>
-            <div class="comment-text">私、手伝います！</div>
           </div>
-          <div class="comment-right">
-            <div class="comment-delete-btn">削除する</div>
-          </div>
-        </div>
-      </div>
+        <% end %>
+      <% end %>
 
-      <div class="comments-list">
-        <div class="wrapper-comment">
-          <div class="comment-left">
-            <div class="comment-upper">
-              <p class="comment-user-name">momo</p>
-              <p class="comment-create-time">2020/12/11 12:11</p>
-            </div>
-            <div class="comment-text">私、少しなら手伝えます！</div>
-          </div>
-          <div class="comment-right">
-            <div class="comment-delete-btn">削除する</div>
-          </div>
-        </div>
-      </div>
-
-      <textarea class="comment-input-text"></textarea>
-      <button type="submit" class="comment-btn">コメントする</button>
+      
+      
+        <%= form_with model: [@work, @comment], class: "comment-form", local: true do |f| %>
+        <%= f.text_area :content, placeholder: "コメントする", class: "comment-input-content" %>
+        <%= f.submit "コメントする", class: "comment-btn" %>
+        <% end %>
     </div>
+    
   </div>
 </div>
 
