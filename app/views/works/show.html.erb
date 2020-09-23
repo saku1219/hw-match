@@ -3,23 +3,25 @@
 
 <div class="wrapper-detail-jobs">
   <div class="wrapper-detail-board-tittle">
-    <p class="works-detail-tittle">手伝ってください！</p>
+    <p class="works-detail-tittle"><%= @work.type.name %></p>
   </div>
   
   <div class="works-detail">
-    <div class="work-detail-tittle">部屋の掃除をお願いします</div>
-    <div class="work-detail-user-name">test</div>
+    <div class="work-detail-tittle"><%= @work.name %></div>
+    <div class="work-detail-user-name"><%= @work.user.nickname %></div>
     <div class="work-detail-wrap">
       <p class="work-detail-key">場所</p>
-      <p class="work-detail-value">青山</p>
+      <p class="work-detail-value"><%= @work.place %></p>
     </div>
     <div class="work-detail-wrap">
       <p class="work-detail-key">ジャンル</p>
-      <p class="work-detail-value">部屋の掃除</p>
+      <p class="work-detail-value"><%= @work.genre.name %></p>
     </div>
     <div class="work-detail-wrap">
       <p class="work-detail-key">日時</p>
-      <p class="work-detail-value">2020/12/11 11:00~14:00</p>
+      <p class="work-detail-value">
+      <%= @work.start_time.strftime("%Y/%m/%d") %>  <%= @work.start_time.strftime("%H:%M") %>〜<%= @work.end_time.strftime("%H:%M")%>
+      </p>
     </div>
     <div class="work-detail-wrap">
       <p class="work-detail-key">説明</p>
