@@ -1,0 +1,72 @@
+<%= render "shared/header" %>
+
+
+<div class="wrapper-detail-jobs">
+  <div class="wrapper-detail-board-tittle">
+    <p class="works-detail-tittle">手伝ってください！</p>
+  </div>
+  
+  <div class="works-detail">
+    <div class="work-detail-tittle">部屋の掃除をお願いします</div>
+    <div class="work-detail-user-name">test</div>
+    <div class="work-detail-wrap">
+      <p class="work-detail-key">場所</p>
+      <p class="work-detail-value">青山</p>
+    </div>
+    <div class="work-detail-wrap">
+      <p class="work-detail-key">ジャンル</p>
+      <p class="work-detail-value">部屋の掃除</p>
+    </div>
+    <div class="work-detail-wrap">
+      <p class="work-detail-key">日時</p>
+      <p class="work-detail-value">2020/12/11 11:00~14:00</p>
+    </div>
+    <div class="work-detail-wrap">
+      <p class="work-detail-key">説明</p>
+      <p class="work-detail-value"><%= @work.description %></p>
+    </div>
+    <div class="work-edit-wrap">
+      <%= link_to "投稿を編集する", "#", class: "work-edit-btn" %>
+      <%= link_to "投稿を削除する", "#", class: "work-delete-btn" %>
+    </div>
+
+    <div class="wrapper-comments">
+      <p class="comment-heading">コメント</p>
+
+      <div class="comments-list">
+        <div class="wrapper-comment">
+          <div class="comment-left">
+            <div class="comment-upper">
+              <p class="comment-user-name">test</p>
+              <p class="comment-create-time">2020/12/11 11:11</p>
+            </div>
+            <div class="comment-text">私、手伝います！</div>
+          </div>
+          <div class="comment-right">
+            <div class="comment-delete-btn">削除する</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comments-list">
+        <div class="wrapper-comment">
+          <div class="comment-left">
+            <div class="comment-upper">
+              <p class="comment-user-name">momo</p>
+              <p class="comment-create-time">2020/12/11 12:11</p>
+            </div>
+            <div class="comment-text">私、少しなら手伝えます！</div>
+          </div>
+          <div class="comment-right">
+            <div class="comment-delete-btn">削除する</div>
+          </div>
+        </div>
+      </div>
+
+      <textarea class="comment-input-text"></textarea>
+      <button type="submit" class="comment-btn">コメントする</button>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
