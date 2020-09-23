@@ -1,34 +1,69 @@
 <%= render "shared/header" %>
 
+<%# 手伝って欲しいです %>
+
 <div class="wrapper-jobs-board">
   <div class="jobs-board">
     <div class="wrapper-jobs-board-tittle">
       <p class="job-tittle">手伝って欲しいです！</p>
     </div>
-    <div class="posts-body">
-    <%= link_to "#", class: "posts_link" do %>
-      <div class="post-tittle">部屋の掃除をお願いします。</div>
-      <div class="post-user-name">toro</div>
-      <div class="post-job-place-genre">
-        <div class="post-job-place">場所 : 渋谷</div>
-        <div class="post-job-genre">ジャンル : 部屋の掃除</div>
-      </div>
-      <div class="post-start-end-time">日時: 2020/11/11  開始時間 11:00 終了時間 14:00</div>
+    <% count = 0 %>
+    <% @work.each do |work| %>
+      <% if work.end_time > Time.current && work.type_id == 2 %>
+        <% count += 1 %>
+        <div class="posts-body">
+        <%= link_to "#", class: "posts_link" do %>
+          <div class="post-tittle"><%= work.name %></div>
+          <div class="post-user-name"><%= work.user.nickname %></div>
+          <div class="post-job-place-genre">
+            <div class="post-job-place">場所 : <%= work.place %></div>
+            <div class="post-job-genre">ジャンル : <%= work.genre.name %></div>
+          </div>
+          <div class="post-start-end-time">
+            日時: <%= work.start_time.strftime("%Y / %m / %d") %>  開始時間 <%= work.start_time.strftime("%H:%M") %> 終了時間 <%= work.end_time.strftime("%H:%M")%>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
     <% end %>
-    </div>
+    <% if count == 0 %>
+      <div class="posts-body">
+        <p class="post-null">現在投稿がありません。。</p>
+      </div>
+    <% end %>
   </div>
+
+<%# 手伝います %>
 
   <div class="helpers-board">
     <div class="wrapper-helpers-board-tittle">
       <p class="helper-tittle">手伝います！</p>
     </div>
 
-<%# 投稿がない時、if分岐する %>
-    <div class="posts-body">
-      <p class="post-null">現在投稿がありません。。</p>
-    </div>
-<%# //投稿がない時、if分岐する %>
-
+    <% count = 0 %>
+    <% @work.each do |work| %>
+      <% if work.end_time > Time.current && work.type_id == 3 %>
+        <% count += 1 %>
+        <div class="posts-body">
+        <%= link_to "#", class: "posts_link" do %>
+          <div class="post-tittle"><%= work.name %></div>
+          <div class="post-user-name"><%= work.user.nickname %></div>
+          <div class="post-job-place-genre">
+            <div class="post-job-place">場所 : <%= work.place %></div>
+            <div class="post-job-genre">ジャンル : <%= work.genre.name %></div>
+          </div>
+          <div class="post-start-end-time">
+            日時: <%= work.start_time.strftime("%Y / %m / %d") %>  開始時間 <%= work.start_time.strftime("%H:%M") %> 終了時間 <%= work.end_time.strftime("%H:%M")%>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
+    <% if count == 0 %>
+      <div class="posts-body">
+        <p class="post-null">現在投稿がありません。。</p>
+      </div>
+    <% end %>
   </div>
 </div>
 

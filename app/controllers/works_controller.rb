@@ -1,5 +1,6 @@
 class WorksController < ApplicationController
   def index
+    @work = Work.order('start_time DESC').includes(:user)
   end
   
   def new
