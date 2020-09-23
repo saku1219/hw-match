@@ -65,6 +65,9 @@
 
       <%= f.submit "編集する" ,class:"text-field-btn" %>
       <div class="edit-cancel-btn"><%= link_to "キャンセル", work_path, class: "edit-cancel-content" %></div>
+      <div class="edit-delete-border">
+      <div class="edit-delete-btn"><%= link_to "削除する", work_path, method: :delete, class: "edit-delete-content" %></div>
+      </div>
     
   </div>
 </div>

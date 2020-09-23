@@ -30,7 +30,6 @@
     <% if user_signed_in? && current_user.id == @work.user_id %>
       <div class="work-edit-wrap">
         <%= link_to "投稿を編集する", edit_work_path, class: "work-edit-btn" %>
-        <%= link_to "投稿を削除する", "#", class: "work-delete-btn" %>
       </div>
     <% end %>
 

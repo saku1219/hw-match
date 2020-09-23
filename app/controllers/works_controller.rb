@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_action :set_work, only: [:show, :edit, :update]
+  before_action :set_work, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :authenticate_user!, only: [:new]
 
@@ -23,6 +23,14 @@ class WorksController < ApplicationController
   def update
     if @work.update(update_params)
       redirect_to work_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @work.destroy
+      redirect_to root_path
     else
       render :edit
     end
