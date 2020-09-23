@@ -12,7 +12,7 @@
       <% if work.end_time > Time.current && work.type_id == 2 %>
         <% count += 1 %>
         <div class="posts-body">
-        <%= link_to "#", class: "posts_link" do %>
+        <%= link_to work_path(work.id), class: "posts_link" do %>
           <div class="post-tittle"><%= work.name %></div>
           <div class="post-user-name"><%= work.user.nickname %></div>
           <div class="post-job-place-genre">
@@ -20,7 +20,7 @@
             <div class="post-job-genre">ジャンル : <%= work.genre.name %></div>
           </div>
           <div class="post-start-end-time">
-            日時: <%= work.start_time.strftime("%Y / %m / %d") %>  開始時間 <%= work.start_time.strftime("%H:%M") %> 終了時間 <%= work.end_time.strftime("%H:%M")%>
+            日時: <%= work.start_time.strftime("%Y/%m/%d") %>  <%= work.start_time.strftime("%H:%M") %>〜<%= work.end_time.strftime("%H:%M")%>
           </div>
         <% end %>
         </div>
@@ -45,7 +45,7 @@
       <% if work.end_time > Time.current && work.type_id == 3 %>
         <% count += 1 %>
         <div class="posts-body">
-        <%= link_to "#", class: "posts_link" do %>
+        <%= link_to work_path(work.id), class: "posts_link" do %>
           <div class="post-tittle"><%= work.name %></div>
           <div class="post-user-name"><%= work.user.nickname %></div>
           <div class="post-job-place-genre">

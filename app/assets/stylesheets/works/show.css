@@ -1,0 +1,155 @@
+.wrapper-detail-jobs{
+  background-color: floralwhite;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.wrapper-detail-board-tittle{
+  background-color: maroon;
+  color: white;
+  margin: 10px 20px;
+  height: 40px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.works-detail-tittle{
+  padding: 10px 30px;
+  font-size: 30px;
+}
+
+.works-detail{
+  background-color: white;
+  border: 2px solid gray;
+  width: 800px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.work-detail-tittle{
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.work-detail-user-name{
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.work-detail-wrap{
+  display: flex;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.work-detail-key{
+  background-color: bisque;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+}
+
+.work-detail-value{
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.work-edit-wrap{
+  display: flex;
+  justify-content: space-evenly;
+  height: 30px;
+  margin: 5px;
+}
+
+.work-edit-btn{
+  border: 3px solid darkred;
+  color: darkred;
+  text-decoration: none;
+  height: 100%;
+  padding: 5px 70px;
+}
+.work-delete-btn{
+  background-color: darkred;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  padding: 8px 80px;
+}
+
+.wrapper-comments{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top: 1px solid gray;
+}
+
+.comment-heading{
+  font-size: 20px;
+  font-weight: 800;
+  color: #332100;
+  margin: 20px 0;
+}
+
+.wrapper-comment{
+  margin: 10px;
+  display: flex;
+}
+
+.comments-list{
+  width: 600px;
+  font-size: 20px;
+}
+
+.comment-left{
+  width: calc(100% - 70px);
+}
+
+.comment-upper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-user-name{
+  font-weight: 800;
+  color: #332100;
+}
+
+.comment-create-time{
+  font-size: 15px;
+}
+
+.comment-text{
+  margin: 10px 0;
+}
+
+.comment-right{
+  width: 60px;
+  padding: 5px;
+  margin-left: 10px;
+  text-align: center;
+  border: 3px solid maroon;
+  color: maroon;
+}
+
+.comment-input-text{
+  height: 150px;
+  width: 500px;
+}
+
+.comment-btn{
+  margin: 20px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 180px;
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+}
