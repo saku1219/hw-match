@@ -27,10 +27,12 @@
       <p class="work-detail-key">説明</p>
       <p class="work-detail-value"><%= @work.description %></p>
     </div>
-    <div class="work-edit-wrap">
-      <%= link_to "投稿を編集する", edit_work_path, class: "work-edit-btn" %>
-      <%= link_to "投稿を削除する", "#", class: "work-delete-btn" %>
-    </div>
+    <% if user_signed_in? && current_user.id == @work.user_id %>
+      <div class="work-edit-wrap">
+        <%= link_to "投稿を編集する", edit_work_path, class: "work-edit-btn" %>
+        <%= link_to "投稿を削除する", "#", class: "work-delete-btn" %>
+      </div>
+    <% end %>
 
     <div class="wrapper-comments">
       <p class="comment-heading">コメント</p>

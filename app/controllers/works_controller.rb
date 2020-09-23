@@ -1,5 +1,7 @@
 class WorksController < ApplicationController
-  before_action :set_action, only: [:show, :edit, :update]
+  before_action :set_work, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @work = Work.order('start_time DESC').includes(:user)
@@ -36,7 +38,14 @@ class WorksController < ApplicationController
     params.require(:work).permit(:type_id, :name, :genre_id, :place, :start_time, :end_time, :description)
   end
   
-  def set_action
+  def set_work
     @work = Work.find(params[:id])
+  end
+
+  def correct_user
+    work = Work.find(params[:id])
+    if !user_signed_in? || current_user.id != work.user_id
+      redirect_to root_url
+    end
   end
 end
