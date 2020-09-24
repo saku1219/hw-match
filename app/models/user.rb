@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :works
+  has_many :comments
+
   with_options presence: true do
     validates :nickname,   uniqueness:{case_sensitive: false}
     validates :email,      uniqueness: { case_sensitive: false }, format: { with: /@/ }

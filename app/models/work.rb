@@ -4,6 +4,7 @@ class Work < ApplicationRecord
   belongs_to_active_hash :genre
   
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   with_options presence: true do
     validates :type_id,     numericality: { other_than: 1, message: "is invalid" }

@@ -20,6 +20,11 @@ class WorksController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new
+    @comments = @work.comments.includes(:user)
+  end
+
   def update
     if @work.update(update_params)
       redirect_to work_path
