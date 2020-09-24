@@ -101,7 +101,7 @@
 .comments-list{
   width: 600px;
   font-size: 20px;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
 }
 
 .comment-left{
@@ -158,9 +158,12 @@
   margin: 20px;
   padding: 10px 20px;
   height: 50px;
-  width: 180px;
   font-size: 20px;
   background-color: red;
   color: white;
   border: none;
+}
+
+.comment-log-in-btn{
+  text-decoration: none;
 }

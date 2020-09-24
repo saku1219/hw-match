@@ -55,12 +55,20 @@
         <% end %>
       <% end %>
 
-      
-      
+      <div class='login-flash-message'>
+        <%= flash[:comment_error] %>
+      </div>
+      <% if user_signed_in? %>
         <%= form_with model: [@work, @comment], class: "comment-form", local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
         <%= f.text_area :content, placeholder: "コメントする", class: "comment-input-content" %>
         <%= f.submit "コメントする", class: "comment-btn" %>
         <% end %>
+      <% else %>
+      <div class="comment-form">
+        <div><%= link_to "ログインしてコメントする", new_user_session_path, class: "comment-log-in-btn comment-btn"%></div>
+      </div>
+      <% end %>
     </div>
     
   </div>

@@ -1,8 +1,13 @@
 class CommentsController < ApplicationController
 
   def create
-    comment = Comment.create(comment_params)
-    redirect_to  "/works/#{comment.work.id}"
+    comment = Comment.new(comment_params)
+    if comment.save
+      redirect_to  "/works/#{comment.work.id}"
+    else
+      flash[:comment_error] = "*空欄のためコメントできませんでした*"
+      redirect_to  "/works/#{comment.work.id}"
+    end
   end
 
   def destroy
