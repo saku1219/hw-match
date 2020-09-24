@@ -11,7 +11,7 @@
     <%= render 'shared/error_messages', model: f.object %>
 
       <div class="text-field">
-        <label class="text-field-label">手伝って欲しい！ / 手伝えます！</label>
+        <label class="text-field-label">手伝って欲しいです！ / 手伝います！</label>
         <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"text-field-input"}) %>
       </div>
       <div class="text-field">
