@@ -1,0 +1,89 @@
+.wrapper-chat{
+  background-color: floralwhite;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper-chat-tittle{
+  width: 60%;
+  margin-top: 10px;
+  display: flex;
+}
+
+.chat-tittle-left{
+  width: calc(100% - 100px);
+}
+
+.chat-tittle{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.chat-join-users{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.chat-tittle-right{
+  display: flex;
+  align-items: center;
+}
+
+.chat-delete-btn{
+  border: 3px solid red;
+  color: red;
+  height: 50px;
+  width: 100px;
+  padding: 10px;
+}
+
+.chat-main{
+  background-color: white;
+  margin: 10px;
+  width: 60%;
+  height: calc(100vh - 280px);
+  overflow: visible auto;
+}
+
+.chat-message{
+  margin: 10px 20px;
+}
+
+.message-upper{
+  display: flex;
+}
+
+.message-user-name{
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.message-date-time{
+  font-size: 10px;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+.message-text{
+  margin: 10px;
+}
+
+.wrapper-chat-input{
+  width: 60%;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.message-input{
+  width: calc(100% - 100px);
+  height: 40px;
+}
+
+.message-submit{
+  width: 80px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+}

@@ -1,3 +1,3 @@
 class Chat < ApplicationRecord
-  has_meny :chat_users
+  has_many :chat_users
 end

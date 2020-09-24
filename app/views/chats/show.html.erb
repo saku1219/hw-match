@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+
+<div class="wrapper-chat">
+
+  <div class="wrapper-chat-tittle">
+    <div class="chat-tittle-left">
+      <div class="chat-tittle"><%= @chat.chat_users[0].work.name %></div>
+      <div class="chat-join-users"><%= @chat.chat_users[0].user.nickname %> と <%= @chat.chat_users[1].user.nickname %></div>
+    </div>
+    <div class="chat-tittle-right">
+      <div class="chat-delete-btn">チャットを<br>削除する</div>
+    </div>
+  </div>
+    
+  <div class="chat-main">
+  
+    <div class="chat-message">
+      <div class="message-upper">
+        <div class="message-user-name">test</div>
+        <div class="message-date-time">2020/11/11/11:11</div>
+      </div>
+      <div class="message-text">コメントありがとうございます。</div>
+    </div>
+  
+  
+    <div class="chat-message">
+      <div class="message-upper">
+        <div class="message-user-name">test</div>
+        <div class="message-date-time">2020/11/11/11:11</div>
+      </div>
+      <div class="message-text">コメントありがとうございます。</div>
+    </div>
+  
+  </div>
+
+  <div class="wrapper-chat-input">
+    <%= form_with  local: true do |f|%>
+      <%= f.text_field :content, class: "message-input" %>
+      <%= f.submit "送信", class: "message-submit" %>
+    <% end %>
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>
