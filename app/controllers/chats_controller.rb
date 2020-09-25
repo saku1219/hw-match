@@ -8,6 +8,10 @@ class ChatsController < ApplicationController
     redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
   end
 
+  def show
+    @message = Message.new
+  end
+
   private
 
   def chat_params

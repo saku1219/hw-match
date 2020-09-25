@@ -34,7 +34,7 @@
   </div>
 
   <div class="wrapper-chat-input">
-    <%= form_with  local: true do |f|%>
+    <%= form_with model: [@work, @chat, @message], local: true do |f|%>
       <%= f.text_field :content, class: "message-input" %>
       <%= f.submit "送信", class: "message-submit" %>
     <% end %>
