@@ -4,8 +4,12 @@ class ChatsController < ApplicationController
 
   def create
     @work = Work.find(params[:work_id])
-    @chat = Chat.create(chat_params)
-    redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
+    @chat = Chat.new(chat_params)
+    if @chat.save
+      redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
+    else
+      redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
+    end
   end
 
   def show
