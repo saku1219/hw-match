@@ -40,18 +40,27 @@
         <% @comments.each do |comment| %>
           <div class="comments-list">
             <div class="wrapper-comment">
-              <div class="comment-left">
                 <div class="comment-upper">
-                  <p class="comment-user-name"><%= comment.user.nickname %></p>
-                  <p class="comment-create-time"><%= comment.created_at.strftime("%Y-%m-%d  %H:%M") %></p>
+                  <div class="comment-upper-left">
+                    <p class="comment-user-name"><%= comment.user.nickname %></p>
+                    <p class="comment-create-time"><%= comment.created_at.strftime("%Y-%m-%d  %H:%M") %></p>
+                  </div>
+
+                  <% if user_signed_in? && current_user.id == comment.user_id %>
+                    <div class="comment-upper-right">
+                      <div class="comment-delete-btn"><%= link_to "削除する", work_comment_path(@work, comment), method: :delete, class: "comment-delete-content" %></div>
+                    </div>
+                  <% end %>
+                  <% if user_signed_in? && current_user.id == @work.user_id && current_user.id != comment.user_id %>
+                    <div class="comment-upper-right">
+                      <div class="comment-chat-create-btn">
+                        <%= button_to "連絡する", work_chats_path(@work.id, user_id: comment.user_id), class: "comment-chat-create-content" %>
+                      </div>
+                    </div>
+                  <% end %>
+
                 </div>
                 <div class="comment-text"><%= comment.content %></div>
-              </div>
-              <% if user_signed_in? && current_user.id == comment.user_id %>
-                <div class="comment-right">
-                  <div class="comment-delete-btn"><%= link_to "削除する", work_comment_path(@work, comment), method: :delete, class: "comment-delete-content" %></div>
-                </div>
-              <% end %>
             </div>
           </div>
         <% end %>

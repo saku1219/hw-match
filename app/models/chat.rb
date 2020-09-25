@@ -1,3 +1,4 @@
 class Chat < ApplicationRecord
-  has_many :chat_users
+  belongs_to :user
+  belongs_to :work
 end

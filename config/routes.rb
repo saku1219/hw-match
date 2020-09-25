@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :works do
     resources :comments, only: [:create, :destroy]
-    resources :chats
+    resources :chats, only: [:show, :create]
   end
 end

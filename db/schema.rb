@@ -10,23 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_065245) do
-
-  create_table "chat_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "chat_id"
-    t.bigint "work_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["chat_id"], name: "index_chat_users_on_chat_id"
-    t.index ["user_id"], name: "index_chat_users_on_user_id"
-    t.index ["work_id"], name: "index_chat_users_on_work_id"
-  end
+ActiveRecord::Schema.define(version: 2020_09_25_031045) do
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "work_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
     t.index ["work_id"], name: "index_chats_on_work_id"
   end
 
@@ -69,9 +60,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_065245) do
     t.index ["user_id"], name: "index_works_on_user_id"
   end
 
-  add_foreign_key "chat_users", "chats"
-  add_foreign_key "chat_users", "users"
-  add_foreign_key "chat_users", "works"
+  add_foreign_key "chats", "users"
   add_foreign_key "chats", "works"
   add_foreign_key "comments", "users"
   add_foreign_key "comments", "works"

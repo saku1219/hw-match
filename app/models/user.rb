@@ -6,8 +6,7 @@ class User < ApplicationRecord
 
   has_many :works
   has_many :comments
-  has_many :chat_users
-  has_many :chats, through: :chat_users
+  has_many :chats
 
   with_options presence: true do
     validates :nickname,   uniqueness:{case_sensitive: false}
