@@ -13,29 +13,25 @@
   </div>
     
   <div class="chat-main">
-  
-    <div class="chat-message">
-      <div class="message-upper">
-        <div class="message-user-name">test</div>
-        <div class="message-date-time">2020/11/11/11:11</div>
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <div class="chat-message">
+        <div class="message-upper">
+          <div class="message-user-name"><%= message.user.nickname %></div>
+          <div class="message-date-time">
+            <%= message.created_at.strftime("%Y-%m-%d  %H:%M") %>
+          </div>
+        </div>
+        <div class="message-text"><%= message.content %></div>
       </div>
-      <div class="message-text">コメントありがとうございます。</div>
-    </div>
-  
-  
-    <div class="chat-message">
-      <div class="message-upper">
-        <div class="message-user-name">test</div>
-        <div class="message-date-time">2020/11/11/11:11</div>
-      </div>
-      <div class="message-text">コメントありがとうございます。</div>
-    </div>
+    <% end %>
+  <% end %>
   
   </div>
 
   <div class="wrapper-chat-input">
     <%= form_with model: [@work, @chat, @message], local: true do |f|%>
-      <%= f.text_field :content, class: "message-input" %>
+      <%= f.text_field :content, autofocus: true, class: "message-input" %>
       <%= f.submit "送信", class: "message-submit" %>
     <% end %>
   </div>

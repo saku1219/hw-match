@@ -14,6 +14,7 @@ class ChatsController < ApplicationController
 
   def show
     @message = Message.new
+    @messages = @chat.messages.includes(:user)
   end
 
   private
