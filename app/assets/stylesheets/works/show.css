@@ -130,6 +130,7 @@
 
 .comment-delete-content{
   font-size: 15px;
+  padding: 2px;
   border: 2px solid maroon;
   color: maroon;
   text-decoration: none;
@@ -138,7 +139,17 @@
 .comment-chat-create-content{
   background-color: maroon;
   color: white;
+  font-size: 15px;
+  padding: 2px 5px;
   border: none;
+}
+
+.comment-chat-link-content{
+  background-color: maroon;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .comment-text{
