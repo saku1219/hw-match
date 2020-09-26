@@ -43,7 +43,7 @@
   margin: 10px;
   width: 60%;
   height: calc(100vh - 280px);
-  overflow: visible auto;
+  overflow-y: scroll;
 }
 
 .chat-message{
