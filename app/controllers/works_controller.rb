@@ -36,7 +36,7 @@ class WorksController < ApplicationController
 
   def destroy
     if @work.destroy
-      redirect_to root_path
+      redirect_to user_path
     else
       render :edit
     end
