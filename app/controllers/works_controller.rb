@@ -23,6 +23,7 @@ class WorksController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @work.comments.includes(:user)
+    @chat = Chat.new
   end
 
   def update

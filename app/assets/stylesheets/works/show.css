@@ -95,7 +95,6 @@
 
 .wrapper-comment{
   margin: 10px 20px;
-  display: flex;
 }
 
 .comments-list{
@@ -104,11 +103,12 @@
   border-top: 1px solid gray;
 }
 
-.comment-left{
-  width: calc(100% - 70px);
+.comment-upper{
+  display: flex;
 }
 
-.comment-upper{
+.comment-upper-left{
+  width: calc(100% - 90px);
   display: flex;
   justify-content: space-between;
 }
@@ -122,22 +122,38 @@
   font-size: 15px;
 }
 
-.comment-text{
-  margin: 10px 0;
-}
-
-.comment-right{
-  width: 60px;
-  height: 50px;
-  padding: 3px;
+.comment-upper-right{
+  width: 80px;
   margin-left: 10px;
   text-align: center;
-  border: 2px solid maroon;
 }
 
 .comment-delete-content{
+  font-size: 15px;
+  padding: 2px;
+  border: 2px solid maroon;
   color: maroon;
   text-decoration: none;
+}
+
+.comment-chat-create-content{
+  background-color: maroon;
+  color: white;
+  font-size: 15px;
+  padding: 2px 5px;
+  border: none;
+}
+
+.comment-chat-link-content{
+  background-color: maroon;
+  color: white;
+  padding: 5px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.comment-text{
+  margin: 10px 0;
 }
 
 .comment-form{

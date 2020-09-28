@@ -5,6 +5,7 @@ class Work < ApplicationRecord
   
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :chats
 
   with_options presence: true do
     validates :type_id,     numericality: { other_than: 1, message: "is invalid" }

@@ -1,0 +1,41 @@
+<%= render "shared/header" %>
+
+<div class="wrapper-chat">
+
+  <div class="wrapper-chat-tittle">
+    <div class="chat-tittle-left">
+      <div class="chat-tittle"><%= @work.name %></div>
+      <div class="chat-join-users"><%= @work.user.nickname %> と <%= @chat.user.nickname %></div>
+    </div>
+    <div class="chat-tittle-right">
+      <div class="chat-delete-btn">チャットを<br>削除する</div>
+    </div>
+  </div>
+    
+  <div class="chat-main", id="scroll-inner">
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <div class="chat-message">
+        <div class="message-upper">
+          <div class="message-user-name"><%= message.user.nickname %></div>
+          <div class="message-date-time">
+            <%= message.created_at.strftime("%Y-%m-%d  %H:%M") %>
+          </div>
+        </div>
+        <div class="message-text"><%= message.content %></div>
+      </div>
+    <% end %>
+  <% end %>
+  
+  </div>
+
+  <div class="wrapper-chat-input">
+    <%= form_with model: [@work, @chat, @message], local: true do |f|%>
+      <%= f.text_field :content, autofocus: true, class: "message-input" %>
+      <%= f.submit "送信", class: "message-submit" %>
+    <% end %>
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>
