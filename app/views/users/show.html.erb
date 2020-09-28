@@ -1,0 +1,77 @@
+<%= render "shared/header" %>
+
+
+<div class="my-page-body">
+  <div class="my-page-main">
+    <div class="my-page-tittle"><%= @user %>のマイページ</div>
+    
+    <div class="my-page-list-body">
+      <div class="my-page-list-left">
+        <div class="wrapper-my-page-chat-lists-tittle">
+          <div class="my-page-chat-lists-tittle">やりとり中のチャット</div>
+        </div>
+        <% if @chat %>
+          <% count = 0 %>
+          <% @chat.each do |chat| %>
+            <% count += 1 %>
+            <div class="my-page-chat-lists-body">
+              <%= link_to "/works/#{chat.work_id}/chats/#{chat.id}", class: "my-page-chat-link" do %>
+                <div class="my-page-chat-list-left">
+                  <div class="my-page-chat-list">
+                    <div class="my-page-chat-list-tittle"><%= chat.work.name %></div>
+                    <div class="my-page-chat-list-date-time">
+                    日時: <%= chat.work.start_time.strftime("%Y/%m/%d") %>  <%= chat.work.start_time.strftime("%H:%M") %>〜<%= chat.work.end_time.strftime("%H:%M")%>
+                    </div>
+                    <div class="my-page-chat-list-user-name">チャットの相手 : <%= chat.user.nickname %></div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="my-page-chat-list-right">
+                <%= link_to raw("チャットを<br>削除する"), work_chat_path(chat.work_id, chat.id), method: :delete, class: "my-page-chat-delete" %>
+                <%# <div class="my-page-chat-delete">チャットを<br>削除する</div> %>
+              </div>
+            </div>
+          <% end %>
+          <% if count == 0 %>
+            <div class="posts-body">
+              <p class="post-null">やりとり中のチャットはありません</p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="my-page-list-right">
+        <div class="wrapper-my-page-work-lists-tittle">
+          <div class="my-page-work-lists-tittle">投稿一覧</div>
+        </div>
+        <% if @work %>
+        <% count = 0 %>
+          <% @work.each do |work| %>
+            <% count += 1 %>
+            <div class="my-page-work-lists-body">
+              <%= link_to "/works/#{work.id}", class: "my-page-work-link" do %>
+                <div class="my-page-work-list">
+                  <div class="my-page-work-list-tittle"><%= work.name %></div>
+                  <div class="my-page-work-list-date-time">
+                  日時: <%= work.start_time.strftime("%Y/%m/%d") %>  <%= work.start_time.strftime("%H:%M") %>〜<%= work.end_time.strftime("%H:%M")%>
+                  </div>
+                </div>
+              <% end %>
+              <div class="my-page-work-delete-body">
+                <%= link_to raw("投稿を<br>削除する"), work_path(work.id), method: :delete, class: "my-page-work-delete", data: { confirm: "投稿を削除すると、投稿に関連したチャットも全て削除されます。\n本当に、投稿を削除しますか？" } %>
+              </div>
+            </div>
+          <% end %>
+          <% if count == 0 %>
+            <div class="posts-body">
+              <p class="post-null">現在、投稿はありません</p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

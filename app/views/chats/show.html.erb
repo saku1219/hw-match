@@ -8,7 +8,7 @@
       <div class="chat-join-users"><%= @work.user.nickname %> と <%= @chat.user.nickname %></div>
     </div>
     <div class="chat-tittle-right">
-      <div class="chat-delete-btn">チャットを<br>削除する</div>
+      <%= link_to raw("チャットを<br>削除する"), work_chat_path(@work.id, @chat.id), method: :delete, class: "chat-delete-btn" %>
     </div>
   </div>
     

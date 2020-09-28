@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-  before_action :set_chat, only: [:show]
+  before_action :set_chat, only: [:show, :destroy]
   before_action :move_to_index, only: [:show]
 
   def create
@@ -15,6 +15,15 @@ class ChatsController < ApplicationController
   def show
     @message = Message.new
     @messages = @chat.messages.includes(:user)
+  end
+
+  def destroy
+    if @chat.destroy
+      redirect_to user_path
+    else
+      redirect_to user_path
+    end
+
   end
 
   private
