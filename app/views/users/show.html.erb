@@ -13,7 +13,7 @@
         <% if @chat %>
         <% @chat.each do |chat| %>
           <div class="my-page-chat-lists-body">
-          <%= link_to "/works/#{chat.work_id}/chats/#{chat.user_id}", class: "my-page-chat-link" do %>
+          <%= link_to "/works/#{chat.work_id}/chats/#{chat.id}", class: "my-page-chat-link" do %>
             <div class="my-page-chat-list-left">
               <div class="my-page-chat-list">
                 <div class="my-page-chat-list-tittle"><%= chat.work.name %></div>
