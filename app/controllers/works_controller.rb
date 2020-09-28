@@ -59,7 +59,7 @@ class WorksController < ApplicationController
   def correct_user
     work = Work.find(params[:id])
     if !user_signed_in? || current_user.id != work.user_id
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 end
