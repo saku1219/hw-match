@@ -1,0 +1,97 @@
+.my-page-body{
+  background-color: aqua;
+}
+
+.my-page-main{
+  background-color: floralwhite;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.my-page-tittle{
+  color: #332100;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px;
+}
+
+.my-page-list-body{
+  background-color: floralwhite;
+  display: flex;
+  justify-content: center;
+}
+
+.my-page-list-left,
+.my-page-list-right{
+  background-color: moccasin;
+  margin: 10px;
+  width: 500px;
+}
+
+.wrapper-my-page-chat-lists-tittle,
+.wrapper-my-page-work-lists-tittle{
+  background-color: maroon;
+  color: white;
+  height: 60px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-page-chat-lists-tittle,
+.my-page-work-lists-tittle{
+  padding: 10px 30px;
+  font-size: 30px;
+}
+
+.my-page-chat-lists-body,
+.my-page-work-lists-body{
+  background-color: snow;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-page-chat-list,
+.my-page-work-list{
+  margin: 10px;
+}
+
+.my-page-chat-list-tittle,
+.my-page-work-list-tittle{
+  overflow-x: hidden;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 5px;
+}
+
+.my-page-chat-list-date-time,
+.my-page-work-list-date-time{
+  font-size: 13px;
+  padding: 5px 10px;
+  color: dimgray;
+}
+
+.my-page-chat-list-user-name{
+  padding: 5px;
+  font-size: 15px;
+}
+
+.my-page-chat-list-right,
+.my-page-work-delete-body{
+  display: flex;
+  align-items: center;
+}
+
+.my-page-chat-delete,
+.my-page-work-delete{
+  border: 2px solid red;
+  color: red;
+  font-size: 10px;
+  width: 60px;
+  margin: 10px 5px;
+  padding: 3px;
+  text-align: center;
+}
