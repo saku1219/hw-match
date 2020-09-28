@@ -58,7 +58,7 @@
                 </div>
               <% end %>
               <div class="my-page-work-delete-body">
-                <%= link_to raw("投稿を<br>削除する"), work_path(work.id), method: :delete, class: "my-page-work-delete" %>
+                <%= link_to raw("投稿を<br>削除する"), work_path(work.id), method: :delete, class: "my-page-work-delete", data: { confirm: "投稿を削除すると、投稿に関連したチャットも全て削除されます。\n本当に、投稿を削除しますか？" } %>
               </div>
             </div>
           <% end %>
