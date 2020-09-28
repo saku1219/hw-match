@@ -54,6 +54,12 @@
   justify-content: space-between;
 }
 
+.my-page-chat-link,
+.my-page-work-link{
+  text-decoration: none;
+  color: black;
+}
+
 .my-page-chat-list,
 .my-page-work-list{
   margin: 10px;
