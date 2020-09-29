@@ -15,7 +15,9 @@
       <% end %>
     </div>
     <div class="chat-tittle-right">
+    <% if current_user.id == @work.user_id %>
       <%= link_to raw("マッチング !"), work_chat_path(@work.id, @chat.id), method: :patch, class: "matching-btn" %>
+    <% end %>
       <%= link_to raw("チャットを<br>削除する"), work_chat_path(@work.id, @chat.id), method: :delete, class: "chat-delete-btn" %>
     </div>
   </div>
