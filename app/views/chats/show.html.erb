@@ -1,12 +1,18 @@
 <%= render "shared/header" %>
 
 <div class="wrapper-chat">
-
+  <% if flash[:notice] %>
+    <div class="matching-notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <div class="wrapper-chat-tittle">
     <div class="chat-tittle-left">
       <div class="chat-tittle"><%= @work.name %></div>
       <div class="chat-join-users"><%= @work.user.nickname %> と <%= @chat.user.nickname %></div>
-      <div class="chat-matching">マッチング !!</div>
+      <% if @chat.check %>
+        <div class="chat-matching">マッチング !!</div>
+      <% end %>
     </div>
     <div class="chat-tittle-right">
       <%= link_to raw("マッチング !"), work_chat_path(@work.id, @chat.id), method: :patch, class: "matching-btn" %>

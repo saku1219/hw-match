@@ -28,10 +28,10 @@ class ChatsController < ApplicationController
     def check
       if @chat.check
         @chat.update(check: false)
-        redirect_to "/works/#{@work.id}/chats/#{@chat.id}",notice: "マッチングしました"
+        redirect_to "/works/#{@work.id}/chats/#{@chat.id}",notice: "マッチングを解除しました"
       else
         @chat.update(check: true)
-        redirect_to "/works/#{@work.id}/chats/#{@chat.id}",notice: "マッチングを解除しました"
+        redirect_to "/works/#{@work.id}/chats/#{@chat.id}",notice: "マッチングが成立しました !"
       end
     end
 
