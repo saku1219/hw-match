@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @work = current_user.works.order('start_time ASC')
     @works = current_user.works.joins(chats: :user)
     @chat = Chat.where(work_id: @works).order('created_at DESC')
+    @chats = Chat.where(user_id: current_user)
   end
 
   private

@@ -9,7 +9,8 @@
     </div>
     <% count = 0 %>
     <% @work.each do |work| %>
-      <% if work.end_time > Time.current && work.type_id == 2 %>
+      <% work_check = Chat.find_by(check: true, work_id: work.id) %>
+      <% if work.end_time > Time.current && work.type_id == 2 && work_check.nil? %>
         <% count += 1 %>
         <div class="posts-body">
         <%= link_to work_path(work.id), class: "posts_link" do %>
