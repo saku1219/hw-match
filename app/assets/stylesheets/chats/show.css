@@ -13,6 +13,7 @@
 
 .chat-tittle-left{
   width: calc(100% - 100px);
+  position: relative;
 }
 
 .chat-tittle{
@@ -27,21 +28,50 @@
 
 .chat-tittle-right{
   display: flex;
-  align-items: center;
+  justify-content: end;
+}
+
+.matching-btn{
+  background-color: red;
+  color: white;
+  height: 50px;
+  width: 100px;
+  padding: 12px 5px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.matching-btn:hover{
+  background-color: #ff9999;
 }
 
 .chat-delete-btn{
-  border: 3px solid red;
+  border: 2px solid red;
   color: red;
-  height: 50px;
-  width: 100px;
-  padding: 10px;
+  font-size: 11px;
+  height: 40px;
+  width: 60px;
+  padding: 6px 0;
+  margin-left: 5px;
+  text-align: center;
   text-decoration: none;
 }
 
 .chat-delete-btn:hover{
-  border: 3px solid #ff9999;
+  border: 2px solid #ff9999;
   color: #ff9999;
+}
+.chat-matching{
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 150px;
+  color: red;
+  border: 2px solid red;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 10px 15px;
+  transform: skewY(-5deg);
 }
 
 .chat-main{

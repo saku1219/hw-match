@@ -52,6 +52,7 @@
   margin: 10px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .my-page-chat-link:hover,
@@ -124,4 +125,17 @@
 .my-page-work-edit-link:hover{
   border: 2px solid #ff9999;
   color: #ff9999;
+}
+
+.my-page-matching{
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  width: 110px;
+  color: red;
+  border: 2px solid red;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 10px;
+  transform: skewY(-5deg);
 }

@@ -25,6 +25,7 @@
                     <div class="my-page-chat-list-user-name">チャットの相手 : <%= chat.user.nickname %></div>
                   </div>
                 </div>
+                <div class="my-page-matching">マッチング !!</div>
               <% end %>
               <div class="my-page-chat-list-right">
                 <%= link_to "削除する", work_chat_path(chat.work_id, chat.id), method: :delete, class: "my-page-chat-delete" %>
@@ -55,6 +56,7 @@
                   日時: <%= work.start_time.strftime("%Y/%m/%d") %>  <%= work.start_time.strftime("%H:%M") %>〜<%= work.end_time.strftime("%H:%M")%>
                   </div>
                 </div>
+            <div class="my-page-matching">マッチング !!</div>
               <% end %>
               <div class="my-page-work-delete-body">
                 <%= link_to "編集する", edit_work_path(work.id),  class: "my-page-work-edit-link" %>
