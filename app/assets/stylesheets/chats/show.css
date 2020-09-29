@@ -39,6 +39,11 @@
   text-decoration: none;
 }
 
+.chat-delete-btn:hover{
+  border: 3px solid #ff9999;
+  color: #ff9999;
+}
+
 .chat-main{
   background-color: white;
   margin: 10px;
@@ -48,7 +53,7 @@
 }
 
 .chat-message{
-  margin: 10px 20px;
+  margin: 20px 20px;
 }
 
 .message-upper{
@@ -56,18 +61,20 @@
 }
 
 .message-user-name{
-  font-size: 25px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .message-date-time{
   font-size: 10px;
+  color: dimgray;
   padding-top: 10px;
   margin-left: 20px;
 }
 
 .message-text{
-  margin: 10px;
+  margin: 10px 10px 20px ;
+  font-size: 15px;
 }
 
 .wrapper-chat-input{
@@ -87,4 +94,8 @@
   background-color: red;
   color: white;
   border: none;
+}
+
+.message-submit:hover{
+  background-color: #ff9999;
 }

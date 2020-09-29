@@ -54,6 +54,11 @@
   justify-content: space-between;
 }
 
+.my-page-chat-link:hover,
+.my-page-work-link:hover{
+  color: gray;
+}
+
 .my-page-chat-link,
 .my-page-work-link{
   text-decoration: none;
@@ -101,4 +106,10 @@
   padding: 3px;
   text-align: center;
   text-decoration: none;
+}
+
+.my-page-chat-delete:hover,
+.my-page-work-delete:hover{
+  border: 2px solid #ff9999;
+  color: #ff9999;
 }

@@ -73,7 +73,7 @@
   border: none;
 }
 
-.edit-cancel-btn{
+.edit-cancel-content{
   margin-bottom: 20px;
   height: 50px;
   width: 180px;
@@ -81,12 +81,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.edit-cancel-content{
   font-size: 20px;
   color: darkred;
   text-decoration: none;
+}
+
+.edit-cancel-content:hover{
+  border: 3px solid #ff3333;
+  color: #ff3333;
 }
 
 .edit-delete-border{
@@ -96,7 +98,7 @@
   justify-content: center;
 }
 
-.edit-delete-btn{
+.edit-delete-content{
   margin: 20px;
   height: 50px;
   width: 180px;
@@ -104,15 +106,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.edit-delete-content{
   font-size: 20px;
   color: white;
   text-decoration: none;
 }
 
-.text-field-btn:hover{
+.text-field-btn:hover,
+.edit-delete-content:hover{
   background-color: #ff9999;
 }
 
