@@ -27,8 +27,7 @@
                 </div>
               <% end %>
               <div class="my-page-chat-list-right">
-                <%= link_to raw("チャットを<br>削除する"), work_chat_path(chat.work_id, chat.id), method: :delete, class: "my-page-chat-delete" %>
-                <%# <div class="my-page-chat-delete">チャットを<br>削除する</div> %>
+                <%= link_to "削除する", work_chat_path(chat.work_id, chat.id), method: :delete, class: "my-page-chat-delete" %>
               </div>
             </div>
           <% end %>
@@ -58,7 +57,8 @@
                 </div>
               <% end %>
               <div class="my-page-work-delete-body">
-                <%= link_to raw("投稿を<br>削除する"), work_path(work.id), method: :delete, class: "my-page-work-delete", data: { confirm: "投稿を削除すると、投稿に関連したチャットも全て削除されます。\n本当に、投稿を削除しますか？" } %>
+                <%= link_to "編集する", edit_work_path(work.id),  class: "my-page-work-edit-link" %>
+                <%= link_to "削除する", work_path(work.id), method: :delete, class: "my-page-work-delete", data: { confirm: "投稿を削除すると、投稿に関連したチャットも全て削除されます。\n本当に、投稿を削除しますか？" } %>
               </div>
             </div>
           <% end %>

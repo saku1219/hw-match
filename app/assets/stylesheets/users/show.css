@@ -100,16 +100,28 @@
 .my-page-work-delete{
   border: 2px solid red;
   color: red;
-  font-size: 10px;
+  font-size: 12px;
   width: 60px;
   margin: 10px 5px;
-  padding: 3px;
+  padding: 5px 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.my-page-work-edit-link{
+  border: 2px solid maroon;
+  color: maroon;
+  font-size: 12px;
+  width: 60px;
+  margin: 10px 5px;
+  padding: 5px 3px;
   text-align: center;
   text-decoration: none;
 }
 
 .my-page-chat-delete:hover,
-.my-page-work-delete:hover{
+.my-page-work-delete:hover,
+.my-page-work-edit-link:hover{
   border: 2px solid #ff9999;
   color: #ff9999;
 }
