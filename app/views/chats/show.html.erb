@@ -9,7 +9,7 @@
       <div class="chat-matching">マッチング !!</div>
     </div>
     <div class="chat-tittle-right">
-      <%= link_to raw("マッチング<br>する"), work_chat_path(@work.id, @chat.id), method: :post, class: "matching-btn" %>
+      <%= link_to raw("マッチング !"), work_chat_path(@work.id, @chat.id), method: :patch, class: "matching-btn" %>
       <%= link_to raw("チャットを<br>削除する"), work_chat_path(@work.id, @chat.id), method: :delete, class: "chat-delete-btn" %>
     </div>
   </div>

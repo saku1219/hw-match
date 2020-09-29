@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
-  before_action :set_chat, only: [:show, :destroy]
+  before_action :set_chat, only: [:show, :destroy, :check]
   before_action :move_to_index, only: [:show]
 
   def create
@@ -23,8 +23,17 @@ class ChatsController < ApplicationController
     else
       redirect_to user_path
     end
-
   end
+
+    def check
+      if @chat.check
+        @chat.update(check: false)
+        redirect_to "/works/#{@work.id}/chats/#{@chat.id}",notice: "マッチングしました"
+      else
+        @chat.update(check: true)
+        redirect_to "/works/#{@work.id}/chats/#{@chat.id}",notice: "マッチングを解除しました"
+      end
+    end
 
   private
 
