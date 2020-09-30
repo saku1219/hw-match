@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<%= render "shared/second-header" %>
 
 <div class="wrapper-chat">
   <% if flash[:matcing_notice] %>
@@ -6,12 +6,19 @@
       <%= flash[:matcing_notice] %>
     </div>
   <% end %>
+  <div class="chat-work-type"><%= @work.type.name %></div>
   <div class="wrapper-chat-tittle">
     <div class="chat-tittle-left">
       <div class="chat-tittle"><%= @work.name %></div>
+      <div class="chat-work-date-time">
+      日時: <%= @work.start_time.strftime("%Y/%m/%d") %>  <%= @work.start_time.strftime("%H:%M") %>〜<%= @work.end_time.strftime("%H:%M")%>
+      </div>
       <div class="chat-join-users"><%= @work.user.nickname %> と <%= @chat.user.nickname %></div>
+      <% work_check = Chat.find_by(check: true, work_id: @chat.work_id) %>
       <% if @chat.check %>
         <div class="chat-matching">マッチング !!</div>
+      <% elsif !@chat.check && !work_check.nil? %>
+        <div class="chat-already-matching">他の方とマッチング済み</div>
       <% end %>
     </div>
     <div class="chat-tittle-right">

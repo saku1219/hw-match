@@ -14,6 +14,15 @@
   padding: 3px 30px;
 }
 
+.chat-work-type{
+  background-color: maroon;
+  color: white;
+  width: 60%;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
 .wrapper-chat-tittle{
   width: 60%;
   margin-top: 10px;
@@ -28,6 +37,9 @@
 .chat-tittle{
   font-size: 30px;
   font-weight: 900;
+}
+.chat-work-date-time{
+  margin: 10px 0 0 10px;
 }
 
 .chat-join-users{
@@ -82,6 +94,18 @@
   padding: 10px 15px;
   transform: skewY(-5deg);
   font-family: "Nico Moji";
+}
+
+.chat-already-matching{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  color: white;
+  background-color: gray;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 10px 15px;
+  transform: skewY(-5deg);
 }
 
 .chat-main{

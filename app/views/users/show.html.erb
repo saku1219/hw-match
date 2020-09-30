@@ -16,6 +16,7 @@
             <% count += 1 %>
             <div class="my-page-chat-lists-body">
               <%= link_to "/works/#{chat.work_id}/chats/#{chat.id}", class: "my-page-chat-link" do %>
+              <div class="my-page-work-type"><%= chat.work.type.name %></div>
                 <div class="my-page-chat-list-left">
                   <div class="my-page-chat-list">
                     <div class="my-page-chat-list-tittle"><%= chat.work.name %></div>
@@ -25,8 +26,11 @@
                     <div class="my-page-chat-list-user-name">希望者 : <%= chat.user.nickname %></div>
                   </div>
                 </div>
+                <% work_check = Chat.find_by(check: true, work_id: chat.work_id) %>
                 <% if chat.check %>
                   <div class="my-page-matching">マッチング !!</div>
+                  <% elsif !chat.check && !work_check.nil? %>
+                    <div class="my-page-already-matching">他の方とマッチング済み</div>
                 <% end %>
               <% end %>
               <div class="my-page-chat-list-right">
@@ -41,6 +45,7 @@
             <% count += 1 %>
             <div class="my-page-chat-lists-body">
               <%= link_to "/works/#{chat.work_id}/chats/#{chat.id}", class: "my-page-chat-link" do %>
+              <div class="my-page-work-type"><%= chat.work.type.name %></div>
                 <div class="my-page-chat-list-left">
                   <div class="my-page-chat-list">
                     <div class="my-page-chat-list-tittle"><%= chat.work.name %></div>
@@ -77,6 +82,7 @@
             <% count += 1 %>
             <div class="my-page-work-lists-body">
               <%= link_to "/works/#{work.id}", class: "my-page-work-link" do %>
+              <div class="my-page-work-type"><%= work.type.name %></div>
                 <div class="my-page-work-list">
                   <div class="my-page-work-list-tittle"><%= work.name %></div>
                   <div class="my-page-work-list-date-time">
