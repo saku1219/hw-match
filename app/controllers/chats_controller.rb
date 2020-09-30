@@ -26,13 +26,17 @@ class ChatsController < ApplicationController
   end
 
     def check
-      if @chat.check
+      work_check = Chat.find_by(check: true, work_id: @chat.work_id)
+      if !@chat.check && work_check.nil?
+      @chat.update(check: true)
+      flash[:matcing_notice] = "マッチングが成立しました !"
+      redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
+      elsif @chat.check
         @chat.update(check: false)
         flash[:matcing_notice] = "マッチングを解除しました"
         redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
       else
-        @chat.update(check: true)
-        flash[:matcing_notice] = "マッチングが成立しました !"
+        flash[:matcing_notice] = "他の方とマッチング済みです"
         redirect_to "/works/#{@work.id}/chats/#{@chat.id}"
       end
     end
