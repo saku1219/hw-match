@@ -17,7 +17,7 @@ RSpec.describe Message, type: :model do
       it 'メッセージが空だと投稿できない' do
         @message.content = ""
         @message.valid?
-        expect(@message.errors.full_messages).to include("Content can't be blank")
+        expect(@message.errors.full_messages).to include("メッセージを入力してください")
       end
     end
   end
