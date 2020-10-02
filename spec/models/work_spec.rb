@@ -17,42 +17,42 @@ RSpec.describe Work, type: :model do
       it '手伝って欲しい！ / 手伝えます！が選択されていないと投稿できない' do
         @work.type_id = ''
         @work.valid?
-        expect(@work.errors.full_messages).to include("Type is invalid")
+        expect(@work.errors.full_messages).to include("手伝って欲しいです！ / 手伝います！が選択されていません")
       end
       it '依頼名が空だと投稿できない' do
         @work.name = ''
         @work.valid?
-        expect(@work.errors.full_messages).to include("Name can't be blank")
+        expect(@work.errors.full_messages).to include("依頼名を入力してください")
       end
       it '場所が空だと投稿できない' do
         @work.place = ''
         @work.valid?
-        expect(@work.errors.full_messages).to include("Place can't be blank")
+        expect(@work.errors.full_messages).to include("場所を入力してください")
       end
       it 'ジャンルが選択されていないと投稿できない' do
         @work.genre_id = ''
         @work.valid?
-        expect(@work.errors.full_messages).to include("Genre is invalid")
+        expect(@work.errors.full_messages).to include("ジャンルが選択されていません")
       end
       it '開始時間が現在より過去だと投稿できない' do
         @work.start_time = Faker::Time.between(from: DateTime.now - 2, to: DateTime.now - 1)
         @work.valid?
-        expect(@work.errors.full_messages).to include("Start time is valid")
+        expect(@work.errors.full_messages).to include("開始時間が正しくありません")
       end
       it '終了時間が現在より過去だと投稿できない' do
         @work.end_time = Faker::Time.between(from: DateTime.now - 2, to: DateTime.now - 1)
         @work.valid?
-        expect(@work.errors.full_messages).to include("End time is valid")
+        expect(@work.errors.full_messages).to include("終了時間が正しくありません")
       end
       it '終了時間が開始時間より過去だと投稿できない' do
         @work.end_time = Faker::Time.between(from: DateTime.now, to: DateTime.now + 1)
         @work.valid?
-        expect(@work.errors.full_messages).to include("End time is valid")
+        expect(@work.errors.full_messages).to include("終了時間が正しくありません")
       end
       it '詳細説明が空だと投稿できない' do
         @work.description = ''
         @work.valid?
-        expect(@work.errors.full_messages).to include("Description can't be blank")
+        expect(@work.errors.full_messages).to include("説明を入力してください")
       end
     end
   end
