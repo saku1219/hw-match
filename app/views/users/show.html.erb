@@ -29,7 +29,7 @@
                 <% work_check = Chat.find_by(check: true, work_id: chat.work_id) %>
                 <% if chat.check %>
                   <div class="my-page-matching">マッチング !!</div>
-                  <% elsif !chat.check && !work_check.nil? %>
+                <% elsif !chat.check && !work_check.nil? %>
                     <div class="my-page-already-matching">他の方とマッチング済み</div>
                 <% end %>
               <% end %>
@@ -55,8 +55,11 @@
                     <div class="my-page-chat-list-user-name">依頼者 : <%= chat.work.user.nickname %></div>
                   </div>
                 </div>
+                <% work_check = Chat.find_by(check: true, work_id: chat.work_id) %>
                 <% if chat.check %>
                   <div class="my-page-matching">マッチング !!</div>
+                  <% elsif !chat.check && !work_check.nil? %>
+                    <div class="my-page-already-matching">他の方とマッチングされました</div>
                 <% end %>
               <% end %>
               <div class="my-page-chat-list-right">
