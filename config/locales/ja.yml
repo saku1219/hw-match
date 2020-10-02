@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        tel: 電話番号
+      work:
+        type_id: 手伝って欲しいです！ / 手伝います！
+        name: 依頼名
+        genre_id: ジャンル
+        place: 場所
+        start_time: 開始時間
+        end_time: 終了時間
+        description: 説明
+      comment:
+        content: コメント
+      message:
+        content: メッセージ
