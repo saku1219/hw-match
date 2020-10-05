@@ -11,6 +11,8 @@
           <div class="my-page-chat-lists-tittle">やりとり中のチャット</div>
         </div>
         <% count = 0 %>
+
+<%# 自分が投稿について、やりとり中のチャット表示 %>
         <% if @chat %>
           <% @chat.each do |chat| %>
             <% count += 1 %>
@@ -40,6 +42,7 @@
           <% end %>
         <% end %>
 
+<%# 他の人の投稿について、やりとり中のチャット表示 %>
         <% if @chats %>
           <% @chats.each do |chat| %>
             <% count += 1 %>
@@ -75,6 +78,7 @@
         <% end %>
       </div>
 
+<%# 投稿一覧表示 %>
       <div class="my-page-list-right">
         <div class="wrapper-my-page-work-lists-tittle">
           <div class="my-page-work-lists-tittle">投稿一覧</div>
